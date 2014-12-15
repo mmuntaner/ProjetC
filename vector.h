@@ -15,6 +15,7 @@
 // ===========================================================================
 #include <cstdio>
 #include <cstdlib>
+#include <math.h>
 
 
 
@@ -55,11 +56,14 @@ class vector
     // =======================================================================
     inline float Get_X(void) const;
     inline float Get_Y(void) const;
+    inline float Get_Norm(void) const;
 
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
-
+     void SetX(float new_x);
+     void SetY(float new_y);
+     void updateNorm(void);
     // =======================================================================
     //                                Operators
     // =======================================================================
@@ -120,16 +124,16 @@ inline float vector::Get_Y(void) const
   return y;
 }
 
-/*inline float vector::Get_Norm(void) const
+inline float vector::Get_Norm(void) const
 {
   return norm;
-  }*/
+}
 
 // ===========================================================================
 //                              Setters' definitions
 // ===========================================================================
-inline void SetX(float new_x);
-inline void SetY(float new_y);
+
+
 // ===========================================================================
 //                             Operators' definitions
 // ===========================================================================

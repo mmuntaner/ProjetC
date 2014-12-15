@@ -48,6 +48,22 @@ vector::~vector(void)
 // ===========================================================================
 //                                 Public Methods
 // ===========================================================================
+void vector::SetX(float new_x)
+{
+  x=new_x;
+  updateNorm(); 
+}
+
+void vector::SetY(float new_y)
+{
+ y=new_y;
+ updateNorm();
+}
+
+void vector::updateNorm(void)
+{
+  norm=sqrt(x*x + y*y);
+}
 
 // ===========================================================================
 //                                Protected Methods

@@ -64,7 +64,7 @@ proie::~proie(void)
 // ===========================================================================
 //                                 Public Methods
 // ===========================================================================
-void proie::vitesse2(proie* tab[5], int i)
+vector proie::vitesse2(proie* tab[5], int i)
 {
 	int K=0;
 	vector newvit;
@@ -77,13 +77,36 @@ void proie::vitesse2(proie* tab[5], int i)
 			{
 				K++;		
 				newvit=newvit + tab[j]->Get_pos() - this->Get_pos(); 
-				vitesse = newvit/K;
+				newvit= newvit/K;
 			}
 	
 	
   }
-	
+	return newvit;
 }
+
+vector proie::vitesse1(proie* tab[5], int i)
+{
+	int K=0;
+	vector newvit;
+	for (int j=0; j<5; j++)
+	{
+			vector dist=this->Get_pos() -tab[j]->Get_pos();
+			float distance =dist.Get_Norm();
+
+			if (distance<rayon & j!= i)
+			{
+				K++;		
+				newvit=newvit + tab[j]->Get_vit() - this->Get_vit(); 
+				newvit = newvit/K;
+			}
+	
+	
+  }
+	return newvit;
+}
+
+
 
 
 // ===========================================================================

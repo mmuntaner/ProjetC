@@ -69,7 +69,8 @@ class proie : public agent
     //                              Public Methods
     // =======================================================================
     inline const float Get_rayon(void) const; 
-    void vitesse2(proie* tab[5], int i);
+    vector vitesse2(proie* tab[5], int i);
+    vector vitesse1(proie* tab[5], int i);
     // =======================================================================
     //                             Public Attributes
     // =======================================================================

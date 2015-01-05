@@ -59,6 +59,7 @@ int main(int argc, char* argv[])
   for (int i=0; i<5; i++)
   {
   	tableau[i]->vitesse2(tableau,i);
+  	//tableau[i]->vitesse1(tableau,i);
   	tableau[i]->Get_vit().affichevector();
    
   }

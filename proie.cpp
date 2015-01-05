@@ -43,12 +43,14 @@ proie::proie(void)
 	float b =150*((float)rand() / (float)RAND_MAX);	
   vector p(a,b);
   position=p;
+  //index++;
 }
 
 proie::proie(float a, float b)
 {
 	vector p(a,b);
 	position=p;
+	//index++;
 }
 
 // ===========================================================================
@@ -61,7 +63,23 @@ proie::~proie(void)
 // ===========================================================================
 //                                 Public Methods
 // ===========================================================================
+vector proie::vitesse2(proie* tab[5])
+{
+	int K=0;
+	for (int i=0; i<5; i++)
+	{
+			vector dist=this->Get_pos() -tab[i]->Get_pos();
+			float distance =dist.Get_Norm();
+			
+			if (distance<rayon & i!=4)
+			{
+				printf("L'oiseau %d est proche de l'oiseau 5.\n",i );
+			}
+	
+	}
 
+	
+}
 // ===========================================================================
 //                                Protected Methods
 // ===========================================================================

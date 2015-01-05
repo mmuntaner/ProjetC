@@ -42,16 +42,18 @@ int main(int argc, char* argv[])
 {
   printf("Hello World !\n");
 
-  agent* tableau[3];
+  proie* tableau[5];
   tableau[0]= new proie();
   tableau[1]= new proie();
   tableau[2]= new proie(12, 18);
+  tableau[3]= new proie(13,19);
+  tableau[4]= new proie(11,17);
 
-  for (int i=0; i<3; i++)
+  for (int i=0; i<5; i++)
   {
   	tableau[i]->affichevector();
   }
-
+  tableau[4]->vitesse2(tableau);
   return 0;
 }
 

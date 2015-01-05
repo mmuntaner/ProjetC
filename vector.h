@@ -67,8 +67,11 @@ class vector
     // =======================================================================
     //                                Operators
     // =======================================================================
+     friend inline vector operator+ (vector v1, vector v2);
+     friend inline vector operator- (vector v1, vector v2);
+     //inline vector& operator= (vector v);
 
-    // =======================================================================
+   // =======================================================================
     //                              Public Methods
     // =======================================================================
 
@@ -126,7 +129,8 @@ inline float vector::Get_Y(void) const
 
 inline float vector::Get_Norm(void) const
 {
-  return norm;
+  float norme=sqrt(x*x + y*y);
+  return norme;
 }
 
 // ===========================================================================
@@ -137,7 +141,28 @@ inline float vector::Get_Norm(void) const
 // ===========================================================================
 //                             Operators' definitions
 // ===========================================================================
+inline vector operator+(vector v1, vector v2)
+{
+  float a = v1.Get_X() + v2.Get_X();
+  float b = v1.Get_Y() + v2.Get_Y();
+  vector p(a,b);
+  return p;
+  
+}
 
+inline vector operator-(vector v1, vector v2)
+{
+  float a = v1.Get_X() - v2.Get_X();
+  float b = v1.Get_Y() - v2.Get_Y();
+  vector p(a,b);
+  return p;
+  
+}
+
+/*inline vector& vector::operator =(vector v)
+{
+  return v;
+}*/
 // ===========================================================================
 //                          Inline functions' definition
 // ===========================================================================

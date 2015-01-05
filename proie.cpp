@@ -58,28 +58,34 @@ proie::proie(float a, float b)
 // ===========================================================================
 proie::~proie(void)
 {
+	//index--;
 }
 
 // ===========================================================================
 //                                 Public Methods
 // ===========================================================================
-vector proie::vitesse2(proie* tab[5])
+void proie::vitesse2(proie* tab[5], int i)
 {
 	int K=0;
-	for (int i=0; i<5; i++)
+	vector newvit;
+	for (int j=0; j<5; j++)
 	{
-			vector dist=this->Get_pos() -tab[i]->Get_pos();
+			vector dist=this->Get_pos() -tab[j]->Get_pos();
 			float distance =dist.Get_Norm();
-			
-			if (distance<rayon & i!=4)
+
+			if (distance<rayon & j!= i)
 			{
-				printf("L'oiseau %d est proche de l'oiseau 5.\n",i );
+				K++;		
+				newvit=newvit + tab[j]->Get_pos() - this->Get_pos(); 
+				vitesse = newvit/K;
 			}
 	
-	}
-
+	
+  }
 	
 }
+
+
 // ===========================================================================
 //                                Protected Methods
 // ===========================================================================

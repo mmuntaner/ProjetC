@@ -60,7 +60,7 @@ class agent
     inline vector Get_pos(void) const;
     inline vector Get_vit(void) const;
     inline const float Get_c(void) const;
-    //inline int Get_index(void) const;
+    // inline int Get_index(void) const;
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
@@ -72,7 +72,7 @@ class agent
     // =======================================================================
     //                              Public Methods
     // =======================================================================
-    inline void affichevector(void);
+   // inline void affichevector(void);
 
     // =======================================================================
     //                             Public Attributes
@@ -109,8 +109,8 @@ class agent
     // =======================================================================
     vector position;
     vector vitesse;
-    static const float d_contact = 1;
-    //static int index;
+    static const float d_contact;
+   // static int index;
 };
 
 
@@ -148,10 +148,7 @@ inline const float agent::Get_c(void) const
 // ===========================================================================
 //                          Inline functions' definition
 // ===========================================================================
-inline void agent::affichevector(void)
-{
-    printf("%f %f \n", this->Get_pos().Get_X(), this->Get_pos().Get_Y());
-}
+
 
 #endif // __AGENT_H__
 

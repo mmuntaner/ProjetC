@@ -69,12 +69,12 @@ class vector
     // =======================================================================
      friend inline vector operator+ (vector v1, vector v2);
      friend inline vector operator- (vector v1, vector v2);
-     //inline vector& operator= (vector v);
+     inline vector operator/ (int v);
 
    // =======================================================================
     //                              Public Methods
     // =======================================================================
-
+     inline void affichevector(void);
     // =======================================================================
     //                             Public Attributes
     // =======================================================================
@@ -159,14 +159,23 @@ inline vector operator-(vector v1, vector v2)
   
 }
 
-/*inline vector& vector::operator =(vector v)
+inline vector vector::operator/ (int v)
 {
-  return v;
-}*/
+  float a = x/v;
+  float b = y/v;
+  vector p(a,b);
+  return p;
+  
+}
+
+
 // ===========================================================================
 //                          Inline functions' definition
 // ===========================================================================
-
+inline void vector::affichevector(void)
+{
+    printf("%f %f \n", this->Get_X(), this->Get_Y());
+}
 
 #endif // __VECTOR_H__
 

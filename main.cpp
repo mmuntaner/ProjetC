@@ -42,7 +42,8 @@ int main(int argc, char* argv[])
 {
   printf("Hello World !\n");
 
-  proie* tableau[5];
+  proie *tableau[5];
+  //proie* tableau = new proie[5];
   tableau[0]= new proie();
   tableau[1]= new proie();
   tableau[2]= new proie(12, 18);
@@ -51,9 +52,24 @@ int main(int argc, char* argv[])
 
   for (int i=0; i<5; i++)
   {
-  	tableau[i]->affichevector();
+  	tableau[i]->Get_pos().affichevector();
+  	printf("\n");
   }
-  tableau[4]->vitesse2(tableau);
+
+  for (int i=0; i<5; i++)
+  {
+  	tableau[i]->vitesse2(tableau,i);
+  	tableau[i]->Get_vit().affichevector();
+   
+  }
+  
+
+  
+  /*for (int i=0; i<5; i++)
+  {
+  	tableau[i]->Get_vit().affichevector();
+  }
+  */
   return 0;
 }
 

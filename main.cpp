@@ -45,9 +45,12 @@ int main(int argc, char* argv[])
   agent* tableau[3];
   tableau[0]= new proie();
   tableau[1]= new proie();
-  tableau[2]= new proie();
+  tableau[2]= new proie(12, 18);
 
-  tableau[0]->affichevector();
+  for (int i=0; i<3; i++)
+  {
+  	tableau[i]->affichevector();
+  }
 
   return 0;
 }

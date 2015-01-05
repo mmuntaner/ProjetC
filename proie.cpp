@@ -39,7 +39,9 @@
 // ===========================================================================
 proie::proie(void)
 {
-  vector p(0,0);
+	float a =150*((float)rand() / (float)RAND_MAX);	
+	float b =150*((float)rand() / (float)RAND_MAX);	
+  vector p(a,b);
   position=p;
 }
 

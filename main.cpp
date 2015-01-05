@@ -42,6 +42,13 @@ int main(int argc, char* argv[])
 {
   printf("Hello World !\n");
 
+  agent* tableau[3];
+  tableau[0]= new proie();
+  tableau[1]= new proie();
+  tableau[2]= new proie();
+
+  tableau[0]->affichevector();
+
   return 0;
 }
 

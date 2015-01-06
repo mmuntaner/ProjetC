@@ -106,8 +106,16 @@ vector proie::vitesse1(proie* tab[5], int i)
 	return newvit;
 }
 
+void proie::Get_speed(proie* tab[5], int i)
+{
+	vitesse=vitesse+this->vitesse2(tab, i)+this->vitesse1(tab, i);
+}
 
 
+void proie::Get_rank(proie* tab[5], int i, int dt)
+{
+	position=position+this->Get_vit()*dt;
+}
 
 // ===========================================================================
 //                                Protected Methods

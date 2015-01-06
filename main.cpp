@@ -53,13 +53,18 @@ int main(int argc, char* argv[])
   for (int i=0; i<5; i++)
   {
   	tableau[i]->Get_pos().affichevector();
-  	printf("\n");
+    tableau[i]->Get_vit().affichevector();
+  	
   }
+
+  printf("\n");
 
   for (int i=0; i<5; i++)
   {
-  	tableau[i]->vitesse2(tableau,i);
+  	tableau[i]->Get_speed(tableau,i);
+    tableau[i]->Get_rank(tableau,i, 1);
   	//tableau[i]->vitesse1(tableau,i);
+    tableau[i]->Get_pos().affichevector();
   	tableau[i]->Get_vit().affichevector();
    
   }
